@@ -5,6 +5,12 @@ public final class Penguin extends Aquatic {
     public Penguin(){
         super();
     }
+
+    @Override
+    public void swim() {
+
+    }
+
     public Penguin(String family,String name,int age,boolean isMammal,String habitat,float swimmingDepth ){
         super(family, name, age, isMammal, habitat);
         this .swimmingDepth = swimmingDepth ;

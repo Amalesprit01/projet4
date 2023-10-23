@@ -7,10 +7,12 @@ public class Zoo {
     private final int NBR_GAGES=25;
 
     private int animalCount=0;
+    private Aquatic[] aquaticAnimals ;
+    int nbrAquaticAnimals = 0 ;
 
-
-
-
+    public Aquatic[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
 
     public int getNBR_GAGES() {
         return NBR_GAGES;
@@ -41,6 +43,7 @@ public class Zoo {
         this.name=name;
         this.city=city;
         this.animals=new Animal[NBR_GAGES];
+        aquaticAnimals = new Aquatic[10];
 
     }
    /* public void displayZoo() {
@@ -114,4 +117,15 @@ public class Zoo {
         }
         return false;
     }
+    // Add method to add Aquatic animals
+    public void addAquaticAnimal(Aquatic aquatic) {
+        if (nbrAquaticAnimals < 10) {
+            aquaticAnimals[nbrAquaticAnimals] = aquatic;
+            nbrAquaticAnimals++;
+            System.out.println(aquatic.getName() + " added to the aquatic animals .");
+        } else {
+            System.out.println("The aquatic animals is full.");
+        }
+    }
+
 }

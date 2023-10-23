@@ -14,10 +14,10 @@ public class Main {
         lion.setAge(5);
         lion.setFamily("cats");
         System.out.println(lion.getName());
-        Animal dog = new Animal("canine","snoopy",5,true);
+        Animal dog = new Animal("canine", "snoopy", 5, true);
         System.out.println(dog.getName());
-        Zoo myZoo= new Zoo("wildlife","Ariana",25);
-        Zoo urZoo= new Zoo("jungle","america",20);
+        Zoo myZoo = new Zoo("wildlife", "Ariana", 25);
+        Zoo urZoo = new Zoo("jungle", "america", 20);
 
         System.out.println(myZoo);
        /* tn.esprit.gestionzoo.entities.Zoo.displayZoo();
@@ -35,18 +35,24 @@ public class Main {
         System.out.println(myZoo.searchAnimal(dog));
         boolean removed = myZoo.removeAnimal(lion);
         System.out.println(removed);
-        System.out.println(Zoo.comparerZoo(myZoo,urZoo));
+        System.out.println(Zoo.comparerZoo(myZoo, urZoo));
         System.out.println(myZoo.isZooFull(myZoo));
-        Aquatic aquatic = new Aquatic("Fish", "Sardine", 2, true, "Sea");
+        // aquatic = new Aquatic("Fish", "Sardine", 2, true, "Sea");
         Terrestrial terrestrial = new Terrestrial("Panda", "Narla", 4, true, 2);
         Dolphin dolphin = new Dolphin("Delphinidae", "Flipper", 5, true, "Ocean", 14.5f);
         Penguin penguin = new Penguin("Spheniscidae", "Skipper", 3, true, "Ocean", 25.3f);
-        Aquatic aquatic1 = new Aquatic();
-        Dolphin dolphin1 = new Dolphin();
-        Penguin penguin1 = new Penguin();
-        aquatic1.swim();
-        dolphin1.swim();
-        penguin1.swim();
-        
+        //aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
+        myZoo.addAquaticAnimal(dolphin);
+        myZoo.addAquaticAnimal(penguin);
+
+
+        for (Aquatic a : myZoo.getAquaticAnimals()) {
+            if (a != null)
+                a.swim();
+        }
+
     }
 }
+
