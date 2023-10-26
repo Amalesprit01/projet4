@@ -17,4 +17,16 @@ public non-sealed abstract class Aquatic extends Animal {
     public String toString(){
         return super.toString() + "Habitat : " +habitat ;
     }
+
+    //instruction 31
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        if (!super.equals(obj)) return false;
+
+        Aquatic aquatic = (Aquatic) obj;
+        return habitat.equals(aquatic.habitat);
+    }
 }

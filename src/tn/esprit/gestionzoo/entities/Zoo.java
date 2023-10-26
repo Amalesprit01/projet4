@@ -127,5 +127,35 @@ public class Zoo {
             System.out.println("The aquatic animals is full.");
         }
     }
+    //instruction 29
+    public float maxPenguinSwimmingDepth() {
+        float maxDepth = 0;
+        for (Aquatic aquatic : aquaticAnimals) {
+            if (aquatic instanceof Penguin) {
+                float depth = ((Penguin) aquatic).getSwimmingDepth();
+                if (depth > maxDepth) {
+                    maxDepth = depth;
+                }
+            }
+        }
+        return maxDepth;
+    }
+    //instruction 30
+    public void displayNumberOfAquaticsByType() {
+        int dolphinCount = 0;
+        int penguinCount = 0;
+        for (Aquatic aquatic : aquaticAnimals) {
+            if (aquatic instanceof Dolphin) {
+                dolphinCount++;
+            } else if (aquatic instanceof Penguin) {
+                penguinCount++;
+            }
+        }
+        System.out.println("Nombre de dauphins : " + dolphinCount);
+        System.out.println("Nombre de pingouins : " + penguinCount);
+    }
+
+
 
 }
+
